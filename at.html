@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kutty's Mood</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #container {
+      margin-top: 50px;
+    }
+    .option-box {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px;
+      border: 2px solid #333;
+      cursor: pointer;
+    }
+    #options {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>Kutty still angry?</h1>
+    <div id="options">
+      <div class="option-box" onclick="handleResponse('no')">No</div>
+      <div class="option-box" onclick="handleResponse('yes')">Yes</div>
+    </div>
+  </div>
+
+  <script>
+    function handleResponse(response) {
+      if (response === 'no') {
+        document.getElementById('options').innerHTML = "<p class='option-box'>Nnnaa minduu kuttiii..cmonn</p>";
+      } else if (response === 'yes') {
+        document.getElementById('container').innerHTML = "<img src='cream_bun.jpg' alt='Cream Bun'><h2>ith medicheratte for bebu?? mm mm??</h2><div id='options'><div class='option-box' onclick='handleSecondResponse(\"yes\")'>Yes</div><div class='option-box' onclick='handleSecondResponse(\"no\")'>No</div></div>";
+      }
+    }
+
+    function handleSecondResponse(response) {
+      if (response === 'yes') {
+        document.getElementById('container').innerHTML = "<p class='option-box'>Deal, medichera...mindu baa</p>";
+      } else if (response === 'no') {
+        document.getElementById('container').innerHTML = "<img src='shawarma.jpg' alt='Shawarma'><h2>Nnaa kuttyk oru shawarma?</h2><div id='options'><div class='option-box' onclick='handleThirdResponse(\"yes\")'>Yes</div><div class='option-box' onclick='handleThirdResponse(\"no\")'>No</div></div>";
+      }
+    }
+
+    function handleThirdResponse(response) {
+      if (response === 'yes') {
+        document.getElementById('container').innerHTML = "<p class='option-box'>Okay deel bebu deel. Ente vaka</p>";
+      } else if (response === 'no') {
+        document.getElementById('container').innerHTML = "<p class='option-box'>Diet anle....appo nth venam?</p><div id='options'><div class='option-box' onclick='showMoreOptions()'>Angne elupm patila....i need more options</div><div class='option-box' onclick='goAway()'>Onnu verupikand pokuvooo please...nalla bore aytund</div></div>";
+      }
+    }
+
+    function showMoreOptions() {
+      document.getElementById('container').innerHTML = "<p class='option-box'>Kuttik njn nte jeevan theran ready</p><div id='options'><div class='option-box' onclick='handleMoreOptionsResponse(\"yes\")'>SShyyoo ath mathi ettayi...</div><div class='option-box' onclick='handleMoreOptionsResponse(\"no\")'>No, I don't want it</div></div>";
+    }
+
+    function handleMoreOptionsResponse(response) {
+      if (response === 'yes') {
+        document.getElementById('container').innerHTML = "<p class='option-box'>Pinnela athannuu...I love you</p>";
+      } else if (response === 'no') {
+        document.getElementById('container').innerHTML = "<p class='option-box'>Enna enth venam nnu whatsapp</p>";
+      }
+    }
+
+    function goAway() {
+      document.getElementById('container').innerHTML = "<p class='option-box'>Ok bie</p>";
+    }
+  </script>
+</body>
+</html>

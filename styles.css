@@ -1,0 +1,12 @@
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.options {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
